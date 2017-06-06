@@ -33,19 +33,8 @@ wepy build --watch
 2. 暂时去除eslint规范检测
 3. 去除项目无关内容目录
 4. 增加文件上传忽略文件内容
-5. 目录树待更新~
-
-### 特性：
-
-* 类Vue开发风格
-* 支持自定义组件开发
-* 支持引入NPM包
-* 支持Promise
-* 支持ES2015+特性，如Async Functions
-* 支持多种编译器，Less/Sass/Styus、Babel/Typescript、Pug
-* 支持多种插件处理，文件压缩，图片压缩，内容替换等
-* 支持 Sourcemap，ESLint等
-* 小程序细节优化，如请求列队，事件优化等
+5. 默认进入wepy框架测试页，点击头像进入weui样式页
+6. 目录树待更新~
 
 ### Links
 
