@@ -15,7 +15,7 @@ wepy new myproject
 
 ```
 npm install
-
+```
 #### 开发实时编译(开发目录内)
 
 ```
