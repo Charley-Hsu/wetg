@@ -17,11 +17,11 @@
 </style>
 <template>
 <view class="container">
-  <view class="userinfo" @tap="handleViewTap">
+  <navigator url="../example/index" class="userinfo">
     <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"/>
     <view class="userinfo-nickname">{{ userInfo.nickName }}</view>
-  </view>
-
+    <view class="userinfo-nickname">点击头像进入weui页面</view>
+  </navigator>
   <panel>
     <view class="title" slot="title">测试数据绑定</view>
 
@@ -88,7 +88,7 @@ import testMixin from '../mixins/test';
 export default class Index extends wepy.page {
   config = {
     navigationBarTitleText: 'test'
-  }
+  };
   components = {
     panel: Panel,
     counter1: Counter,
@@ -96,10 +96,8 @@ export default class Index extends wepy.page {
     list: List,
     group: Group,
     toast: Toast
-  }
-
-  mixins = [testMixin]
-
+  };
+  mixins = [testMixin];
   data = {
     mynum: 20,
     userInfo: {
@@ -153,14 +151,12 @@ export default class Index extends wepy.page {
       ]
     }
     ]
-  }
-
+  };
   computed = {
     now () {
       return +new Date();
     }
-  }
-
+  };
   methods = {
     plus () {
       this.mynum++;
@@ -201,28 +197,28 @@ export default class Index extends wepy.page {
       let $event = args[args.length - 1];
       console.log(`${this.$name} receive ${$event.name} from ${$event.source.$name}`);
     }
-  }
+  };
   events = {
     'index-emit': (...args) => {
       let $event = args[args.length - 1];
       console.log(`${this.$name} receive ${$event.name} from ${$event.source.$name}`);
     }
-  }
-
+  };
   onLoad() {
     let self = this;
     this.$parent.getUserInfo(function (userInfo) {
+      console.log(userInfo);
       if (userInfo) {
         self.userInfo = userInfo;
-      }
+      };
       self.normalTitle = '标题已被修改';
       self.setTimeoutTitle = '标题三秒后会被修改';
       setTimeout(() => {
         self.setTimeoutTitle = '到三秒了';
-        self.$apply();
+        self.$apply()
       }, 3000);
       self.$apply();
     });
   };
-};
+}
 </script>
