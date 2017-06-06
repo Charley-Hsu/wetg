@@ -24,8 +24,8 @@ wepy build --watch
 
 #### 开发者工具使用
 
-1. 使用[微信开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html?t=1496743667)新建项目，本地开发选择`dist`目录。
-2. `微信开发者工具`-->项目-->关闭ES6转ES5。<font style="color:red">重要：漏掉此项会运行报错。</font>
+1. 使用[微信开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html?t=1496743667)新建项目，本地开发选择`dist`目录
+2. `微信开发者工具`-->项目-->关闭ES6转ES5，开启开发环境不校验请求域名、TSL版本以及HTTPS证书
 
 #### TG发现频道测试对此框架修改
 1. 集成小程序版weui `sytle文件夹中`
