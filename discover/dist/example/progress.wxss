@@ -1,0 +1,4 @@
+
+.weui-progress{
+    margin-bottom: 24px;
+}
