@@ -48,7 +48,7 @@
 			click() {
 				return new Promise((resolve, reject) => {
 					wepy.request({
-						url: 'http://midway.test.66buy.com.cn/discovery/index/init.node?cityId=2554&storeId=1491&tabIndex=0&_=1496828069157',
+						url: 'https://midway.test.66buy.com.cn/discovery/index/init.node?cityId=2554&storeId=1491&tabIndex=0&_=1496828069157',
 						success: function (d) {
 							resolve(d);
 						}, 
