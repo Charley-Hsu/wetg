@@ -1,0 +1,2 @@
+@import "./../components/demo.wxss";
+.btn_demo{margin:0 auto;text-align:center}

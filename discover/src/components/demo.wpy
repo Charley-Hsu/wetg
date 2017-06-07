@@ -1,0 +1,53 @@
+<style lang="less">
+
+</style>
+<template>
+  <view class="demo">
+    <view class="page__bd">
+        <view class="weui-panel weui-panel_access">
+            <slot name="title" class="weui-panel__hd">图文组合列表</slot>
+            <view class="weui-panel__bd">
+                <navigator url="{{url}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="{{icon60}}" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">{{title}}</view>
+                        <view class="weui-media-box__desc">{{desc}}</view>
+                    </view>
+                </navigator>
+            </view>
+            <navigator url="{{url}}"  class="weui-panel__ft">
+                <view class="weui-cell weui-cell_access weui-cell_link">
+                    <view class="weui-cell__bd">查看更多</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy';
+  export default class Demo extends wepy.component {
+    data = {
+        icon60: '../images/vcode.png'
+    };
+    props = {
+        url: {
+            type: String,
+            default: ''
+        },
+        title: {
+            type: String,
+            default: ''
+        },
+        desc: {
+            type: String,
+            default: ''
+        }
+    };
+    onLoad () {
+    }
+  }
+</script>
