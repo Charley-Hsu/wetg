@@ -1,0 +1,78 @@
+/**
+ * data:2017-06-08 
+ * author:Carlo 
+ * description: discover index page
+ * 
+ */
+
+<style lang="less">
+.btn_demo{
+	margin: 0 auto;
+	text-align:center;
+}
+.bg-white{
+	background-color: white;
+}
+</style>
+<template lang="wxml">
+	<repeat for="{{list}}" key="index" index="index" item="item" class="container">
+		<panel :url="item.url" :title="item.til" :desc="item.desc">
+			<view slot="title" class="weui-panel__hd">{{name}}</view>
+		</panel>
+	</repeat>
+	<repeat class="bg-white" for="discovery" key="index" index="index" item="item" vx:if="discovery.length">
+	    <!-- 内容区 -->
+	    <discover-index-item :data="item" :show="selfMemberId==item.memberId?'my':''" ></discover-index-item>
+	    <!-- 广告区 -->
+<!-- 	    <discover-index-images :data="blockAdPoster[$index==0?0:1].items[0]" v-if="($index==0||$index==1)"></discover-index-images> -->
+	</repeat>
+</template>
+<script>
+	import wepy from 'wepy';
+	import Demo from '../components/demo';
+	export default class Index extends wepy.page {
+		config = {
+			navigationBarTitleText: '发现'
+		};
+		components = {
+			discover-index-item: Demo
+		};
+		data = {
+			text:'发送请求',
+			name:'demo图文组件',
+			list:[{url:'./index', til: 'wepy',desc:"这是wepy框架介绍,点击查看详情"}, {url:'../example/index', til: 'weui',desc:"这是weui框架介绍,点击查看详情"}]
+		};
+		methods = {
+			click() {
+				return new Promise((resolve, reject) => {
+					wepy.request({
+						url: 'https://midway.test.66buy.com.cn/discovery/index/init.node?cityId=2554&storeId=1491&tabIndex=0&_=1496803262272',
+						success: function (d) {
+							resolve(d);
+						}, 
+						fail:function (err){
+							reject(err);
+						}
+					});
+				});
+			},
+			async req() {
+				try {
+					let data = await this.methods.click();
+					console.log(data.data);
+					this.text = data.data.data[0].key;
+					this.$apply();//函数运行周期之外需手动调用$apply()
+				} catch (err) {
+					console.log(err);
+				}
+			}
+		};
+		events = {
+
+		};
+		onLoad() {
+			// this.methods.pro1.bind(this)()
+			// onLoad内调用methonds方法需绑定this
+		};
+}
+</script>
