@@ -1,3 +1,4 @@
+<font color=#0099ff size=5 face="黑体">注意,master更新了新的请求方法！</font>
 ### 安装使用
 
 #### 安装（更新） wepy 命令行工具。
@@ -34,13 +35,15 @@ wepy build --watch
 4. 增加文件上传忽略文件内容
 5. 默认进入demo页,启动页可在app.wpy中修改
 6. master分支暂时为基础结构版本，修改请详细注明
-7. 开发请重新申请分支
+7. 去除原框架请求方式，重新封装微信小程序请求方式
 
 ### 项目目录树(开发目录起)
 ```
     dist               
     node_modules
     src
+        commonjs
+            api.js
         components
             demo.wpy
         pages
