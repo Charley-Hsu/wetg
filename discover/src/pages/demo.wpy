@@ -48,7 +48,8 @@
 			param:{
 				"cityId":2554,
 				"storeId":20,
-				"tabIndex":"_=1496930415499"
+				"tabIndex":0,
+				"_":"1496994391536"
 			}
 		};
 		methods = {

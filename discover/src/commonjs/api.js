@@ -48,6 +48,25 @@ export default {
           },
           success:(d)=>{
             resolve(d)
+            // let data = d.data.data;
+            // let length = data.length-1;
+            // let obj = { };
+            // if (data[length].key == "loadMore") {
+            //     let moreUrl = data[length].data;
+            //     for (var i = length; i >= 0; i--) {
+            //         if (typeof(obj[data[i].key]) === "undefined") {
+            //             let arr = [ ];
+            //             obj[data[i].key] = data[i];
+            //             console.log(obj)
+            //         }else{
+                        
+
+            //         };
+            //         resolve(obj);
+            //     };
+            // }else{
+            //   resolve(data)
+            // };
           },
           fail:(error)=>{
             reject(error)
